@@ -6,16 +6,16 @@ class Cloud < Sprite
     
     def init
         @name = "Cloud"
-        @costume = "bigbluecloud"
-        set_y_to(240)
+        @costumes = ["bigbluecloud"]
+        set_y_to 240
     end
     
-    def update
-        if key_pressed? Gosu::KbLeft
-            change_x_by(-5)
+    def scripts
+        if key_pressed? :left_arrow
+            change_x_by -5
         end
-        if key_pressed? Gosu::KbRight
-            change_x_by(5)
+        if key_pressed? :right_arrow
+            change_x_by 5
         end
     end
 end
@@ -31,7 +31,7 @@ class Itchy < Gosu::Window
     end
 
     def update
-        @sprite.update
+        @sprite.scripts
     end
 
     def draw
@@ -44,7 +44,6 @@ class Itchy < Gosu::Window
             close
         end
     end
-
 end
 
 window = Itchy.new
