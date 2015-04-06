@@ -7,6 +7,7 @@ class Sprite
         @costumes = [""]
         @costume = ""
         init
+        @window = window
 
         file = File.join(File.dirname(__FILE__), '..', 'costumes', @costume + ".png")
         @image = Gosu::Image.new(window, file, false)
@@ -16,20 +17,32 @@ class Sprite
         @image.draw_rot(@x, @y, 1, @angle)
     end
     
-    def turn_left
-        @angle -= 4.5
+    def turn_left(angle)
+        @angle -= angle
     end
     
-    def turn_right
-        @angle += 4.5
+    def turn_right(angle)
+        @angle += angle
     end
     
-    def set_x(x)
+    def set_x_to(x)
         @x = x
     end
     
-    def set_y(y)
+    def change_x_by(d)
+        @x += d
+    end
+    
+    def set_y_to(y)
         @y = y
+    end
+    
+    def change_y_by(d)
+        @y += d
+    end
+    
+    def key_pressed?(k)
+        @window.button_down? k
     end
     
 end
