@@ -3,8 +3,16 @@ require 'itchy/sprite'
 require 'itchy/stage'
 
 class Cloud < Sprite
-    @name = "Cloud"
-    @costumes = "bigbluecloud"
+    
+    def init
+        @name = "Cloud"
+        @costume = "bigbluecloud"
+        @y = 240
+    end
+    
+    def update
+        @x += 1
+    end
 end
 
 class Itchy < Gosu::Window
@@ -17,6 +25,7 @@ class Itchy < Gosu::Window
   end
 
   def update
+      @sprite.update
   end
 
   def draw
