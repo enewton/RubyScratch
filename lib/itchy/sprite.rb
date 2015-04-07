@@ -5,14 +5,23 @@ class Sprite
         @name = "Untitled"
         @x = @y = @vel_x = @vel_y = @angle = 0.0
         @costumes = [""]
+        @sounds = [""]
         @current_costume = 0
+        
         init
+        
         @window = window
 
         file = File.join(File.dirname(__FILE__), '..', 'costumes', @costumes[@current_costume] + ".png")
         @image = Gosu::Image.new(window, file, false)
         
-        @keymap = { left_arrow: Gosu::KbLeft, right_arrow: Gosu::KbRight }
+        @@keymap = {
+            up_arrow:    Gosu::KbUp,
+            down_arrow:  Gosu::KbDown,
+            left_arrow:  Gosu::KbLeft,
+            right_arrow: Gosu::KbRight,
+            space:       Gosu::KbSpace
+        }
     end
     
     def draw
@@ -44,7 +53,7 @@ class Sprite
     end
     
     def key_pressed?(k)
-        @window.button_down? @keymap[k]
+        @window.button_down? @@keymap[k]
     end
     
 end
