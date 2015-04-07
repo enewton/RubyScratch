@@ -32,10 +32,11 @@ class Fish < Sprite
     
     def init
         @name = "Fish"
-        @costumes = ["BlueFish4"]
+        @costumes = ["PurpleFish1", "PurpleFish2"]
         @sounds = ["meow"]
         set_x_to 0
         set_y_to 0
+        set_size_to_percent 0.1
     end
     
     def scripts

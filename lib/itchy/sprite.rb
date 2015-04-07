@@ -4,6 +4,7 @@ class Sprite
     def initialize(window)
         @name = "Untitled"
         @x = @y = @vel_x = @vel_y = @angle = 0.0
+        @scale = 1
         @costumes = [""]
         @sounds = [""]
         @current_costume = 0
@@ -25,7 +26,7 @@ class Sprite
     end
     
     def draw
-        @image.draw_rot(@x + 240, 180 - @y, 1, @angle)
+        @image.draw_rot(@x + 240, 180 - @y, 1, @angle, 0.5, 0.5, @scale, @scale)
     end
     
     def turn_left(angle)
@@ -64,4 +65,7 @@ class Sprite
         @window.button_down? @@keymap[k]
     end
     
+    def set_size_to_percent(p)
+        @scale = p
+    end
 end
