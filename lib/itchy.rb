@@ -8,7 +8,8 @@ class Cloud < Sprite
         @name = "Cloud"
         @costumes = ["bigbluecloud"]
         @sounds = ["meow"]
-        set_y_to 240
+        set_x_to 0
+        set_y_to 100
     end
     
     def scripts
@@ -19,10 +20,10 @@ class Cloud < Sprite
             change_x_by 5
         end
         if key_pressed? :up_arrow
-            change_y_by -5
+            change_y_by 5
         end
         if key_pressed? :down_arrow
-            change_y_by 5
+            change_y_by -5
         end
     end
 end
@@ -33,8 +34,8 @@ class Fish < Sprite
         @name = "Fish"
         @costumes = ["BlueFish4"]
         @sounds = ["meow"]
-        set_x_to 100
-        set_y_to 100
+        set_x_to 0
+        set_y_to 0
     end
     
     def scripts
@@ -44,7 +45,7 @@ end
 class Itchy < Gosu::Window
     
     def initialize
-        super 640, 480, false
+        super 480, 360, false
         self.caption = "Itchy (Scratch in Ruby)"
     
         @stage = Stage.new(self)

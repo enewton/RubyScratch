@@ -14,7 +14,7 @@ class Sprite
 
         file = File.join(File.dirname(__FILE__), '..', 'costumes', @costumes[@current_costume] + ".png")
         @image = Gosu::Image.new(window, file, false)
-        
+
         @@keymap = {
             up_arrow:    Gosu::KbUp,
             down_arrow:  Gosu::KbDown,
@@ -25,7 +25,7 @@ class Sprite
     end
     
     def draw
-        @image.draw_rot(@x, @y, 1, @angle)
+        @image.draw_rot(@x + 240, 180 - @y, 1, @angle)
     end
     
     def turn_left(angle)
@@ -44,12 +44,20 @@ class Sprite
         @x += delta
     end
     
+    def x_position
+        @x
+    end
+    
     def set_y_to(y)
         @y = y
     end
     
     def change_y_by(delta)
         @y += delta
+    end
+    
+    def y_position
+        @y
     end
     
     def key_pressed?(k)
