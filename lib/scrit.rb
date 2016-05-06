@@ -1,6 +1,6 @@
 require 'gosu'
-require 'itchy/sprite'
-require 'itchy/stage'
+require 'scrit/sprite'
+require 'scrit/stage'
 
 class Cloud < Sprite
     
