@@ -5,7 +5,7 @@ class Sprite
         @name = "Untitled"
         @x = @y = @vel_x = @vel_y = @angle = 0.0
         @scale = 1
-        @costumes = [""]
+        @costumes = ["costume1"]
         @sounds = [""]
         @current_costume = 0
         
@@ -14,7 +14,7 @@ class Sprite
         @window = window
 
         file = File.join(File.dirname(__FILE__), '..', 'costumes', @costumes[@current_costume] + ".png")
-        @image = Gosu::Image.new(window, file, false)
+        #@image = Gosu::Image.new(window, file, false)
 
         @@keymap = {
             up_arrow:    Gosu::KbUp,
@@ -25,8 +25,15 @@ class Sprite
         }
     end
     
+    def init
+    end
+    
     def draw
         @image.draw_rot(@x + 240, 180 - @y, 1, @angle, 0.5, 0.5, @scale, @scale)
+    end
+    
+    def direction
+        @angle
     end
     
     def turn_left(angle)

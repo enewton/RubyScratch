@@ -68,6 +68,3 @@ class Itchy < Gosu::Window
         end
     end
 end
-
-window = Itchy.new
-window.show
