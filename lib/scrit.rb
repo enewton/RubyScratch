@@ -47,10 +47,10 @@ class Itchy < Gosu::Window
     
     def initialize
         super 480, 360, false
-        self.caption = "Itchy (Scratch in Ruby)"
+        self.caption = "Scrit (Scratch in Ruby)"
     
         @stage = Stage.new(self)
-        @sprites = [Cloud.new(self), Fish.new(self)]
+        @sprites = []#[Cloud.new(self), Fish.new(self)]
     end
 
     def update
@@ -66,5 +66,9 @@ class Itchy < Gosu::Window
         if id == Gosu::KbEscape
             close
         end
+    end
+    
+    def stage
+        @stage
     end
 end

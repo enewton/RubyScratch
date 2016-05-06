@@ -9,6 +9,7 @@ s.email       = 'erik_newton@hotmail.com'
 s.files       = ["lib/scrit.rb",
                  "lib/scrit/sprite.rb",
                  "lib/scrit/stage.rb",
+                 "lib/backdrops/party.png",
                  "lib/backdrops/space.png",
                  "lib/costumes/costume1.png",
                  "lib/costumes/costume2.png",

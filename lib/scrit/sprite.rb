@@ -14,7 +14,7 @@ class Sprite
         @window = window
 
         file = File.join(File.dirname(__FILE__), '..', 'costumes', @costumes[@current_costume] + ".png")
-        #@image = Gosu::Image.new(window, file, false)
+        @image = Gosu::Image.new(window, file, false)
 
         @@keymap = {
             up_arrow:    Gosu::KbUp,
