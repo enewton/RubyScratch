@@ -3,7 +3,7 @@ class Stage
     
     def initialize(window)
         @window = window
-        @backdrops = ["space"]
+        @backdrops = ["white"]
         @file = File.join(File.dirname(__FILE__), '..', 'backdrops', @backdrops[0] + ".png")
         @background_image = Gosu::Image.new(window, @file, true)
     end
