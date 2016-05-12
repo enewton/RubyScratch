@@ -2,17 +2,16 @@
 class Sprite
     
     def initialize(window)
+        @window = window
         @name = "Untitled"
         @x = @y = @vel_x = @vel_y = @angle = 0.0
         @scale = 1
         @costumes = ["costume1"]
         @sounds = [""]
         @current_costume = 0
-        
+
         init
         
-        @window = window
-
         file = File.join(File.dirname(__FILE__), '..', 'costumes', @costumes[@current_costume] + ".png")
         @image = Gosu::Image.new(window, file, false)
 
@@ -26,6 +25,14 @@ class Sprite
     end
     
     def init
+    end
+    
+    def script
+    end
+    
+    def switch_costume_to(costume)
+        file = File.join(File.dirname(__FILE__), '..', 'costumes', costume + ".png")
+        @image = Gosu::Image.new(file)
     end
     
     def draw

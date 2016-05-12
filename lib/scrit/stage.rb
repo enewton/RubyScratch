@@ -8,6 +8,9 @@ class Stage
         @background_image = Gosu::Image.new(window, @file, true)
     end
     
+    def script
+    end
+    
     def draw
         #@background_image.draw(0, 0, ZOrder::Background)
         @background_image.draw_as_quad(0, 0, 0xffffffff, @window.width, 0, 0xffffffff, @window.width, @window.height, 0xffffffff, 0, @window.height, 0xffffffff, 0)

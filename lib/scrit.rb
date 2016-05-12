@@ -10,20 +10,29 @@ class Itchy < Gosu::Window
         self.caption = "Scrit (Scratch in Ruby)"
     
         @stage = Stage.new(self)
-        @sprites = []#[Cloud.new(self), Fish.new(self)]
+        @sprites = Hash.new
     end
 
     def green_flag
         show
     end
         
+    def sprites
+        @sprites
+    end
+        
     def update
-        @sprites.each { |s| s.scripts }
+        @stage.script
+        sprites.each do |name, sprite|
+            sprite.script
+        end
     end
 
     def draw
         @stage.draw
-        @sprites.each { |s| s.draw }
+        sprites.each do |name, sprite|
+            sprite.draw
+        end
     end
 
     def button_down(id)
