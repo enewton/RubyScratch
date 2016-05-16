@@ -6,7 +6,7 @@ class Sprite
   
   def initialize(options = {})
     @x = @y = @direction = 0.0
-    @scale = 1
+    @scale = 0.5
     @costumes = ["costume1"]
     @image = {}
     @sounds = [""]
@@ -45,6 +45,22 @@ class Sprite
     @image[@costumes[@current_costume]].draw_rot(@x + 240, 180 - @y, 1, @direction, 0.5, 0.5, @scale, @scale)
   end
   
+  def touching_left
+    @x <= -240
+  end
+  
+  def touching_right
+    @x >= 240
+  end
+  
+  def touching_bottom
+    @y <= -180
+  end
+  
+  def touching_top
+    @y >= 180
+  end
+   
   def turn_left(angle)
     @direction -= angle
   end
