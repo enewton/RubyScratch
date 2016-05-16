@@ -4,7 +4,7 @@ class Sprite
   attr_accessor :x, :y, :direction
   attr_accessor :costumes
   
-  def initialize(options)
+  def initialize(options = {})
     @x = @y = @direction = 0.0
     @scale = 1
     @costumes = ["costume1"]
